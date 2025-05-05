@@ -15,7 +15,11 @@ body {
 }
 
 section {
-  height: 400vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 nav {
@@ -41,6 +45,60 @@ h1 {
   font-size: 1.5rem;
 }
 
+.slideFromLeft {
+  width: 300px;
+  height: 300px;
+  background-color: red;
+
+  animation-name: slideFromLeft;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.slideFromRight {
+  width: 300px;
+  height: 300px;
+  background-color: green;
+
+  animation: slideFromRight 3s ease-in-out infinite;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.colorSwitch {
+  background-color: violet;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+
+.colorSwitch:hover, .colorSwitch:active {
+  background-color: chartreuse;
+}
+
+.makeBigger {
+  scale: 1;
+  transition: 1s ease-in;
+}
+
+.makeBigger:hover, .makeBigger:active {
+  scale: 1.2;
+}
+
+.changeOpacity {
+  opacity: 1;
+  transition: 1s ease-out;
+}
+
+.changeOpacity:hover, .changeOpacity:active {
+  opacity: 0.5;
+}
+
 button {
   color: black;
 }
@@ -48,3 +106,26 @@ button {
 footer {
   padding: 1rem;
 }
+
+@keyframes slideFromLeft {
+  0% {
+    transform: rotate(360deg);
+    scale: 0.1;
+  }
+  50% {
+    scale: 3;
+  }
+  100% {
+    scale: 0.1;
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(500px) rotate(360deg);
+    rotate: 360deg;
+    scale: 2;
+  }
+}
+
+
